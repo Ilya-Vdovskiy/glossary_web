@@ -11,10 +11,10 @@ const buttonClass = clsx(
 export function CategoryButtons() {
   return (
     <div className="flex flex-col justify-center gap-3 sm:flex-row">
-      <Link href="#sections" className={buttonClass}>
+      <a href="#sections" className={buttonClass}>
         <BookOpen className="size-4" />
         Зарубежная литература XIX века (к разделам)
-      </Link>
+      </a>
       <Link href="/science" className={buttonClass}>
         <FlaskConical className="size-4" />
         Научная часть
