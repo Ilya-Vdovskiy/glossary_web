@@ -67,6 +67,12 @@ export default async function TermPage({ params }: TermPageProps) {
 
           <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm md:p-10">
             <p className="whitespace-pre-line text-lg leading-9 text-slate-800">{term.definition}</p>
+            {term.source ? (
+              <aside className="mt-8 border-t border-slate-200 pt-5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-blue-700">Источник</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{term.source}</p>
+              </aside>
+            ) : null}
           </div>
         </article>
       </main>

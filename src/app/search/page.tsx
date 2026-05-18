@@ -29,7 +29,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         <section className="mt-7">
           <h1 className="text-4xl font-bold text-slate-950">Поиск</h1>
           <p className="mt-3 text-slate-600">
-            Поиск работает по названию термина, определению и названию раздела.
+            Поиск работает по названию термина, определению, источнику и названию раздела.
           </p>
           <div className="mt-7 max-w-2xl">
             <SearchBar initialValue={query} />
@@ -39,9 +39,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         <section className="mt-10">
           {query ? (
             <p className="mb-5 text-sm font-semibold text-slate-500">
-              {results.length > 0
-                ? `Найдено: ${results.length}`
-                : `По запросу «${query}» ничего не найдено.`}
+              {results.length > 0 ? `Найдено: ${results.length}` : `По запросу «${query}» ничего не найдено.`}
             </p>
           ) : null}
 

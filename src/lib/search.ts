@@ -23,12 +23,13 @@ export function searchTerms(terms: GlossaryTerm[], query: string): GlossaryTerm[
       const title = normalizeSearchText(term.term);
       const definition = normalizeSearchText(term.definition);
       const section = normalizeSearchText(term.sectionTitle);
-      const haystack = `${title} ${definition} ${section}`;
+      const source = normalizeSearchText(term.source);
 
       const score = tokens.reduce((sum, token) => {
         if (title.includes(token)) return sum + 8;
         if (definition.includes(token)) return sum + 3;
         if (section.includes(token)) return sum + 1;
+        if (source.includes(token)) return sum + 1;
         return sum;
       }, 0);
 

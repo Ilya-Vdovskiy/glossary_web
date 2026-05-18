@@ -3,6 +3,7 @@ export type GlossaryTerm = {
   term: string;
   definition: string;
   preview: string;
+  source: string;
   sectionSlug: string;
   sectionTitle: string;
 };

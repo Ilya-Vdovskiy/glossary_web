@@ -7,18 +7,7 @@ export const sections = glossary.sections;
 
 export const terms = sections.flatMap((section) => section.terms);
 
-export const literaryParentSlug = "literaturovedenie";
-
-export const literarySubsectionSlugs = [
-  "teoriya",
-  "personalii",
-  "proizvedeniya",
-  "personazhi-proizvedeniy",
-];
-
-export const topLevelSections = sections.filter(
-  (section) => !literarySubsectionSlugs.includes(section.slug),
-);
+export const topLevelSections = sections;
 
 export function getSection(slug: string): GlossarySection | undefined {
   return sections.find((section) => section.slug === slug);
@@ -29,13 +18,7 @@ export function getTerm(slug: string): GlossaryTerm | undefined {
 }
 
 export function getSectionChildren(slug: string): GlossarySection[] {
-  if (slug !== literaryParentSlug) {
-    return [];
-  }
-
-  return literarySubsectionSlugs
-    .map((childSlug) => getSection(childSlug))
-    .filter((section): section is GlossarySection => Boolean(section));
+  return [];
 }
 
 export function getSectionTermCount(section: GlossarySection): number {
@@ -49,11 +32,7 @@ export function getSectionTermCount(section: GlossarySection): number {
 }
 
 export function getParentSection(section: GlossarySection): GlossarySection | undefined {
-  if (!literarySubsectionSlugs.includes(section.slug)) {
-    return undefined;
-  }
-
-  return getSection(literaryParentSlug);
+  return undefined;
 }
 
 export function getStats() {
