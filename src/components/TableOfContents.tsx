@@ -17,13 +17,13 @@ export function TableOfContents({ sections }: TableOfContentsProps) {
             <h2 className="text-xl font-semibold text-slate-950">Разделы глоссария</h2>
             <p className="mt-1 text-sm text-slate-500">Выберите раздел, чтобы перейти к списку терминов.</p>
           </div>
-          <Link
+          <a
             href="#"
             className="rounded-2xl p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 focus:outline-none focus:ring-4 focus:ring-blue-100"
             aria-label="Закрыть"
           >
             <X className="size-5" />
-          </Link>
+          </a>
         </div>
 
         <div className="max-h-[62vh] overflow-y-auto p-4">
