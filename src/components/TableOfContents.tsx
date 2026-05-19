@@ -10,7 +10,7 @@ type TableOfContentsProps = {
 export function TableOfContents({ sections }: TableOfContentsProps) {
   return (
     <section id="sections" className="toc-modal fixed inset-0 z-50">
-      <Link aria-label="Закрыть оглавление" href="#" className="absolute inset-0 bg-slate-950/20 backdrop-blur-sm" />
+      <a aria-label="Закрыть оглавление" href="#" className="absolute inset-0 bg-slate-950/20 backdrop-blur-sm" />
       <div className="absolute left-1/2 top-24 w-[calc(100%-2rem)] max-w-2xl -translate-x-1/2 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
         <div className="flex items-start justify-between gap-4 border-b border-slate-100 p-6">
           <div>
